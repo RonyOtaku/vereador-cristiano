@@ -20,12 +20,21 @@ header {
   padding: 15px 30px;
   background: #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex-wrap: wrap; /* Permite que itens quebrem linha em telas menores */
 }
 
+/* Logo */
+header .logo img {
+  max-width: 120px; /* Define tamanho máximo da logo */
+  height: auto;     /* Mantém proporção */
+}
+
+/* Menu de navegação */
 header nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap; /* Quebra o menu em telas pequenas */
 }
 
 header nav a {
@@ -34,12 +43,34 @@ header nav a {
   font-weight: 500;
 }
 
+/* Botão do header */
 .btn-header {
   background: #2ecc71;
   color: #fff;
   padding: 10px 15px;
   border-radius: 5px;
   text-decoration: none;
+  margin-top: 10px; /* Dá espaço em telas pequenas */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .btn-header {
+    align-self: stretch; /* Botão ocupa toda a largura */
+    text-align: center;
+  }
 }
 
 /* Banner */
