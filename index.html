@@ -103,15 +103,17 @@
   </section>
 
   <!-- Contato -->
-  <section id="contato" class="contato">
+  <section id="contato">
+  <div class="container">
     <h2>Contato</h2>
-    <form>
-      <input type="text" placeholder="Seu nome" required>
-      <input type="email" placeholder="Seu e-mail" required>
-      <textarea placeholder="Sua mensagem"></textarea>
+    <form action="https://formspree.io/f/xeolpbew" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
       <button type="submit" class="btn verde">Enviar</button>
     </form>
-  </section>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer>
