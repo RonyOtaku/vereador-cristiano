@@ -20,13 +20,13 @@ header {
   padding: 15px 30px;
   background: #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  flex-wrap: wrap; /* Permite que itens quebrem linha em telas menores */
+  flex-wrap: wrap;
 }
 
 /* Logo */
 header .logo img {
-  max-width: 120px; /* Define tamanho máximo da logo */
-  height: auto;     /* Mantém proporção */
+  max-width: 120px;
+  height: auto;
 }
 
 /* Menu de navegação */
@@ -34,7 +34,7 @@ header nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
-  flex-wrap: wrap; /* Quebra o menu em telas pequenas */
+  flex-wrap: wrap;
 }
 
 header nav a {
@@ -50,27 +50,7 @@ header nav a {
   padding: 10px 15px;
   border-radius: 5px;
   text-decoration: none;
-  margin-top: 10px; /* Dá espaço em telas pequenas */
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .btn-header {
-    align-self: stretch; /* Botão ocupa toda a largura */
-    text-align: center;
-  }
+  margin-top: 10px;
 }
 
 /* Banner */
@@ -94,8 +74,6 @@ header nav a {
   font-weight: bold;
 }
 
-.btn.azul { background: #3498db; color: #fff; }
-.btn.verde { background: #2ecc71; color: #fff; }
 .btn.pequeno { font-size: 0.9rem; }
 
 /* Seções */
@@ -103,32 +81,68 @@ section {
   padding: 60px 20px;
 }
 
+/* Seção Sobre */
 .sobre {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 30px;
+  flex-wrap: wrap; /* Permite quebrar linha em telas menores */
 }
 
+.sobre .texto {
+  flex: 1;
+  min-width: 250px;
+}
+
+.sobre .foto {
+  flex: 1;
+  min-width: 250px;
+}
+
+.sobre img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Seção Projetos */
 .projetos .cards {
   display: flex;
   gap: 20px;
+  overflow-x: auto; /* Scroll horizontal */
+  padding-bottom: 10px; /* Espaço para scrollbar */
+  scroll-behavior: smooth;
 }
 
-.card {
+.projetos .card {
+  min-width: 250px;
+  flex: 0 0 auto;
   background: #fff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+/* Status projetos */
 .status.andamento { color: #e67e22; }
 .status.concluido { color: #27ae60; }
 
-/* Grid */
+/* Grid (Notícias, Galeria) */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+}
+
+.noticias img,
+.galeria img {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 /* Contato */
@@ -152,4 +166,54 @@ footer {
   background: #eee;
   padding: 20px;
   margin-top: 50px;
+}
+
+/* Parágrafos */
+p {
+  text-indent: 30px;
+  margin-bottom: 20px;
+  text-align: justify;
+  line-height: 1.8;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  /* Header */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .btn-header {
+    align-self: stretch;
+    text-align: center;
+  }
+
+  /* Seção Sobre */
+  .sobre {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sobre .texto, .sobre .foto {
+    min-width: 100%;
+  }
+
+  .sobre img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Projetos: mantém scroll horizontal */
+  .projetos .cards {
+    gap: 15px;
+  }
 }
