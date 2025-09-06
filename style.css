@@ -305,7 +305,7 @@ p {
   margin-bottom: 10px;
 }
 
-/* FullCalendar - Calendário da Agenda */
+/* FullCalendar */
 #calendar {
   max-width: 900px;
   margin: auto;
@@ -313,15 +313,10 @@ p {
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  min-height: 650px; /* garante que o calendário apareça */
+  height: 650px; /* altura fixa */
 }
 
-.fc .fc-toolbar-title {
-  font-size: 1.8rem;
-  color: #27ae60;
-  font-weight: 600;
-}
-
+.fc .fc-toolbar-title { font-size: 1.8rem; color: #27ae60; font-weight: 600; }
 .fc .fc-button {
   background-color: #2ecc71;
   border: none;
@@ -332,12 +327,7 @@ p {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
-.fc .fc-button:hover {
-  background-color: #27ae60;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 10px rgba(46,204,113,0.4);
-}
+.fc .fc-button:hover { background-color: #27ae60; }
 
 .fc-event {
   background-color: #2ecc71 !important;
@@ -347,29 +337,188 @@ p {
   font-weight: 500;
   padding: 5px 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
-
-.fc-event:hover {
-  background-color: #27ae60 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 10px rgba(46,204,113,0.4);
-}
-
-/* Dias selecionados e hover do mouse */
-.fc-daygrid-day:hover {
-  background-color: rgba(46, 204, 113, 0.1);
-  cursor: pointer;
-}
+.fc-event:hover { background-color: #27ae60 !important; }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  #calendar {
-    padding: 15px;
-    width: 100%;
+  header { flex-direction: column; align-items: flex-start; gap: 10px; }
+  header nav ul { flex-direction: column; gap: 10px; width: 100%; }
+  .btn-header { align-self: stretch; text-align: center; }
+  .sobre { flex-direction: column; align-items: center; text-align: center; }
+  .sobre .texto, .sobre .foto { min-width: 100%; }
+  .projetos .cards { gap: 15px; }
+  #calendar { width: 100%; padding: 15px; }
+  .fc .fc-toolbar-title { font-size: 1.4rem; }
+}
+
+/* Agenda - FullCalendar */
+#calendar {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+  /* ESSENCIAL: altura mínima */
+  min-height: 600px;
+}
+
+/* FullCalendar toolbar responsiva */
+.fc-toolbar {
+  display: flex;
+  flex-wrap: wrap; /* permite quebrar os botões em linhas */
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.fc-toolbar .fc-toolbar-chunk {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+@media (max-width: 768px) {
+  /* Torna os botões menores em telas pequenas */
+  .fc-button {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+  /* Ajusta o título para caber na tela */
+  .fc-toolbar-title {
+    font-size: 16px;
+    white-space: normal; /* permite quebrar linha se necessário */
+  }
+}
+
+/* ======================
+   Seção Transparência
+====================== */
+.transparencia {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.transparencia h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.transparencia p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cards de gastos */
+.cards-transparencia {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.cards-transparencia .card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1 1 200px;
+  max-width: 220px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards-transparencia .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.cards-transparencia .card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.cards-transparencia .card p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+/* Gráfico de distribuição */
+.grafico-transparencia {
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+.grafico-transparencia h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Relatórios */
+.relatorios {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.relatorios h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.relatorios ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.relatorios ul li a {
+  text-decoration: none;
+  color: #2196F3;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.relatorios ul li a:hover {
+  color: #0b7dda;
+  text-decoration: underline;
+}
+
+/* ======================
+   Responsividade
+====================== */
+@media (max-width: 768px) {
+  .cards-transparencia {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .fc .fc-toolbar-title {
-    font-size: 1.4rem;
+  .cards-transparencia .card {
+    max-width: 90%;
   }
+
+  .grafico-transparencia {
+    max-width: 50%;
+  }
+}
+
+/* Gráfico de distribuição */
+.grafico-transparencia {
+  max-width: 300px; /* metade do tamanho anterior (era 600px) */
+  margin: 0 auto 40px auto;
 }

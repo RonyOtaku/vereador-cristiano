@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vereador - Compromisso com a Cidade</title>
   <link rel="stylesheet" href="style.css">
+
+  <<!-- FullCalendar CSS -->
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
+
+<!-- FullCalendar JS (versão global com suporte a locale) -->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales-all.global.min.js"></script>
+
 </head>
 <body>
 
@@ -25,92 +33,19 @@
         <li><a href="contato.html">Contato</a></li>
       </ul>
     </nav>
-    <a href="#contato" class="btn-header">Fale com o Vereador</a>
+    <a href="/contato.html" class="btn-header">Fale com o Vereador</a>
   </header>
 
   <!-- Banner -->
   <section class="hero">
     <h1>Compromisso com a nossa cidade</h1>
     <p>Trabalho, dedicação e transparência para todos.</p>
-    <div class="hero-buttons">
-      <a href="#projetos" class="btn azul">Veja meus projetos</a>
-      <a href="#contato" class="btn verde">Entre em contato</a>
-    </div>
-  </section>
-
-  <!-- Sobre -->
-  <section id="sobre" class="sobre">
-    <div class="texto">
-      <h2>Sobre o Vereador</h2>
-      <p>Aqui vai a biografia, missão e trajetória política...</p>
-    </div>
-    <div class="foto">
-      <img src="assets/img/vereador.jpg" alt="Vereador">
-    </div>
-  </section>
-
-  <!-- Projetos -->
-  <section id="projetos" class="projetos">
-    <h2>Projetos e Atuação</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Projeto de Educação</h3>
-        <p>Status: <span class="status andamento">Em andamento</span></p>
-        <p>Descrição do projeto...</p>
-        <a href="#" class="btn pequeno">Saiba mais</a>
-      </div>
-      <div class="card">
-        <h3>Saúde para Todos</h3>
-        <p>Status: <span class="status concluido">Concluído</span></p>
-        <p>Descrição do projeto...</p>
-        <a href="#" class="btn pequeno">Saiba mais</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Notícias -->
-  <section id="noticias" class="noticias">
-    <h2>Notícias</h2>
-    <div class="grid">
-      <article>
-        <img src="assets/img/noticia1.jpg" alt="Notícia">
-        <h3>Título da notícia</h3>
-        <p>Resumo da notícia...</p>
-        <a href="#">Leia mais</a>
-      </article>
-    </div>
   </section>
 
   <!-- Agenda -->
   <section id="agenda" class="agenda">
-    <h2>Agenda</h2>
-    <p>Aqui pode entrar um calendário interativo ou lista de eventos.</p>
-  </section>
-
-  <!-- Transparência -->
-  <section id="transparencia" class="transparencia">
-    <h2>Transparência</h2>
-    <p>Relatórios de gastos, gráficos e prestação de contas.</p>
-  </section>
-
-  <!-- Galeria -->
-  <section id="galeria" class="galeria">
-    <h2>Galeria</h2>
-    <div class="grid">
-      <img src="assets/img/evento1.jpg" alt="Evento">
-      <img src="assets/img/evento2.jpg" alt="Evento">
-    </div>
-  </section>
-
-  <!-- Contato -->
-  <section id="contato" class="contato">
-    <h2>Contato</h2>
-    <form>
-      <input type="text" placeholder="Seu nome" required>
-      <input type="email" placeholder="Seu e-mail" required>
-      <textarea placeholder="Sua mensagem"></textarea>
-      <button type="submit" class="btn verde">Enviar</button>
-    </form>
+    <h2>Agenda do Vereador</h2>
+    <div id="calendar"></div>
   </section>
 
   <!-- Footer -->
@@ -119,6 +54,7 @@
     <p>Desenvolvido com transparência para a comunidade.</p>
   </footer>
 
+  <!-- Script externo -->
   <script src="script.js"></script>
 </body>
 </html>

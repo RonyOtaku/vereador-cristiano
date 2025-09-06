@@ -6,12 +6,12 @@
   <title>Vereador - Compromisso com a Cidade</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- FullCalendar CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
+  <<!-- FullCalendar CSS -->
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
 
-  <!-- FullCalendar JS -->
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales/pt-br.js"></script>
+<!-- FullCalendar JS (versão global com suporte a locale) -->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales-all.global.min.js"></script>
 
 </head>
 <body>
@@ -161,15 +161,83 @@
 
   <!-- Agenda -->
   <section id="agenda" class="agenda">
-    <h2>Agenda</h2>
+    <h2>Agenda do Vereador</h2>
     <div id="calendar"></div>
   </section>
 
   <!-- Transparência -->
-  <section id="transparencia" class="transparencia">
-    <h2>Transparência</h2>
-    <p>Relatórios de gastos, gráficos e prestação de contas.</p>
-  </section>
+<section id="transparencia" class="transparencia">
+  <h2>Transparência</h2>
+  <p>Confira como os recursos públicos estão sendo aplicados em nossa cidade. Acompanhe relatórios, gráficos e dados detalhados por área.</p>
+
+  <!-- Cards de Gastos -->
+  <div class="cards-transparencia">
+    <div class="card">
+      <h4>Saúde</h4>
+      <p>R$ 2.000.000,00</p>
+    </div>
+    <div class="card">
+      <h4>Educação</h4>
+      <p>R$ 1.500.000,00</p>
+    </div>
+    <div class="card">
+      <h4>Infraestrutura</h4>
+      <p>R$ 1.000.000,00</p>
+    </div>
+    <div class="card">
+      <h4>Esporte & Cultura</h4>
+      <p>R$ 500.000,00</p>
+    </div>
+  </div>
+
+  <!-- Gráfico de distribuição -->
+  <div class="grafico-transparencia">
+    <h3>Distribuição dos Gastos</h3>
+    <canvas id="graficoGastos"></canvas>
+  </div>
+
+<!-- Botão "Veja Mais" da Transparência -->
+<div class="ver-mais-container transparencia-btn">
+  <a href="transparencia.html" class="btn-ver-mais transparencia-ver-mais">Veja Mais</a>
+</div>
+
+<!-- Script para o gráfico -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('graficoGastos').getContext('2d');
+  const graficoGastos = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Saúde', 'Educação', 'Infraestrutura', 'Esporte & Cultura'],
+      datasets: [{
+        label: 'Gastos por área',
+        data: [2000000, 1500000, 1000000, 500000],
+        backgroundColor: [
+          '#4CAF50',
+          '#2196F3',
+          '#FFC107',
+          '#FF5722'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'bottom'
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              return context.label + ': R$ ' + context.raw.toLocaleString('pt-BR');
+            }
+          }
+        }
+      }
+    }
+  });
+</script>
 
   <!-- Galeria -->
   <section id="galeria" class="galeria">
@@ -183,7 +251,7 @@
   <!-- Contato -->
   <section id="contato" class="contato">
     <h2>Contato</h2>
-    <form action="https://formspree.io/f/xeolpbew" method="POST">
+    <form id="contatoForm" action="https://formspree.io/f/xeolpbew" method="POST">
       <input type="text" name="nome" placeholder="Seu nome" required>
       <input type="email" name="email" placeholder="Seu e-mail" required>
       <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
@@ -197,26 +265,7 @@
     <p>Desenvolvido com transparência para a comunidade.</p>
   </footer>
 
-  <!-- Inicialização do FullCalendar -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var calendarEl = document.getElementById('calendar');
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        locale: 'pt-br', // idioma português Brasil
-        initialView: 'dayGridMonth',
-        headerToolbar: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay'
-        },
-        events: [
-          { title: 'Reunião com a comunidade', start: '2025-09-10' },
-          { title: 'Visita ao bairro', start: '2025-09-15' },
-          { title: 'Audiência pública', start: '2025-09-20' }
-        ]
-      });
-      calendar.render();
-    });
-  </script>
+  <!-- Script externo -->
+  <script src="script.js"></script>
 </body>
 </html>
