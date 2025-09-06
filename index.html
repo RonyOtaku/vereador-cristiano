@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vereador - Compromisso com a Cidade</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- FullCalendar CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
+
+  <!-- FullCalendar JS -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales/pt-br.js"></script>
+
 </head>
 <body>
 
@@ -29,43 +37,43 @@
   </header>
 
   <!-- Banner -->
-<section class="hero">
-  <h1>Compromisso com a nossa cidade</h1>
-  <p>Trabalho, dedicação e transparência para todos.</p>
-</section>
+  <section class="hero">
+    <h1>Compromisso com a nossa cidade</h1>
+    <p>Trabalho, dedicação e transparência para todos.</p>
+  </section>
 
   <!-- Sobre -->
   <section id="sobre" class="sobre">
     <div class="texto">
        <h2 style="text-align: center; margin-bottom: 20px;">Sobre o Vereador Cristiano Mateus</h2>
-    <p>
-      Cristiano Mateus é um representante atuante da cidade de Belém, Alagoas. Sua trajetória é marcada
-      pelo compromisso com a população, pela escuta atenta das necessidades da comunidade e pela busca
-      constante de soluções que tragam benefícios concretos para todos. Ao longo de sua vida pública, 
-      construiu uma imagem de proximidade, dedicação e responsabilidade com as causas que realmente 
-      impactam o dia a dia das pessoas.
-    </p>
-    <p>
-      Filho de Belém, Cristiano conhece de perto os desafios e as potencialidades do município. Sua 
-      atuação política é pautada em valores como transparência, ética e respeito, sempre priorizando 
-      o bem-estar coletivo e o fortalecimento dos serviços públicos. Sua missão como vereador é ser a 
-      voz da população na Câmara Municipal, defendendo com firmeza as demandas da cidade e buscando 
-      recursos e projetos que melhorem a qualidade de vida da comunidade.
-    </p>
-    <p>
-      Entre suas principais bandeiras estão o fortalecimento da saúde, com ações que ampliem o acesso 
-      e a qualidade do atendimento, a valorização da educação como ferramenta de transformação social 
-      e o incentivo ao esporte, à cultura e às oportunidades de emprego para a juventude. Cristiano 
-      acredita que um município forte se constrói com união, diálogo e planejamento, e é nesse caminho 
-      que tem direcionado sua atuação.
-    </p>
-    <p>
-      Cristiano Mateus segue firme no propósito de ser um vereador presente e acessível. Seu gabinete 
-      está sempre de portas abertas para receber a população, ouvir sugestões e transformar as 
-      reivindicações em projetos e iniciativas que façam diferença no dia a dia de Belém. Sua maior 
-      motivação é servir à cidade e lutar, com coragem e determinação, por um futuro melhor para todos.
-    </p>
-  </div>
+       <p>
+         Cristiano Mateus é um representante atuante da cidade de Belém, Alagoas. Sua trajetória é marcada
+         pelo compromisso com a população, pela escuta atenta das necessidades da comunidade e pela busca
+         constante de soluções que tragam benefícios concretos para todos. Ao longo de sua vida pública, 
+         construiu uma imagem de proximidade, dedicação e responsabilidade com as causas que realmente 
+         impactam o dia a dia das pessoas.
+       </p>
+       <p>
+         Filho de Belém, Cristiano conhece de perto os desafios e as potencialidades do município. Sua 
+         atuação política é pautada em valores como transparência, ética e respeito, sempre priorizando 
+         o bem-estar coletivo e o fortalecimento dos serviços públicos. Sua missão como vereador é ser a 
+         voz da população na Câmara Municipal, defendendo com firmeza as demandas da cidade e buscando 
+         recursos e projetos que melhorem a qualidade de vida da comunidade.
+       </p>
+       <p>
+         Entre suas principais bandeiras estão o fortalecimento da saúde, com ações que ampliem o acesso 
+         e a qualidade do atendimento, a valorização da educação como ferramenta de transformação social 
+         e o incentivo ao esporte, à cultura e às oportunidades de emprego para a juventude. Cristiano 
+         acredita que um município forte se constrói com união, diálogo e planejamento, e é nesse caminho 
+         que tem direcionado sua atuação.
+       </p>
+       <p>
+         Cristiano Mateus segue firme no propósito de ser um vereador presente e acessível. Seu gabinete 
+         está sempre de portas abertas para receber a população, ouvir sugestões e transformar as 
+         reivindicações em projetos e iniciativas que façam diferença no dia a dia de Belém. Sua maior 
+         motivação é servir à cidade e lutar, com coragem e determinação, por um futuro melhor para todos.
+       </p>
+    </div>
     <div class="foto">
       <img src="assets/img/vereador.jpg" alt="Vereador">
     </div>
@@ -107,28 +115,54 @@
       </div>
     </div>
   </section>
-  <!-- Botão Veja Mais -->
-  <div class="ver-mais-container">
-  <a href="projetos.html" class="btn-ver-mais">Veja Mais</a>
-</div>
+  <div class="ver-mais-container projetos-btn">
+    <a href="projetos.html" class="btn-ver-mais projetos-ver-mais">Veja Mais</a>
+  </div>
 
   <!-- Notícias -->
-  <section id="noticias" class="noticias">
+  <section id="noticias" class="projetos">
     <h2>Notícias</h2>
-    <div class="grid">
-      <article>
+    <div class="cards">
+      <div class="card">
         <img src="assets/img/noticia1.jpg" alt="Notícia">
-        <h3>Título da notícia</h3>
+        <h3>Título da notícia 1</h3>
         <p>Resumo da notícia...</p>
-        <a href="#">Leia mais</a>
-      </article>
+        <a href="#" class="btn pequeno">Leia mais</a>
+      </div>
+      <div class="card">
+        <img src="assets/img/noticia2.jpg" alt="Notícia">
+        <h3>Título da notícia 2</h3>
+        <p>Resumo da notícia...</p>
+        <a href="#" class="btn pequeno">Leia mais</a>
+      </div>
+      <div class="card">
+        <img src="assets/img/noticia3.jpg" alt="Notícia">
+        <h3>Título da notícia 3</h3>
+        <p>Resumo da notícia...</p>
+        <a href="#" class="btn pequeno">Leia mais</a>
+      </div>
+      <div class="card">
+        <img src="assets/img/noticia4.jpg" alt="Notícia">
+        <h3>Título da notícia 4</h3>
+        <p>Resumo da notícia...</p>
+        <a href="#" class="btn pequeno">Leia mais</a>
+      </div>
+      <div class="card">
+        <img src="assets/img/noticia4.jpg" alt="Notícia">
+        <h3>Título da notícia 5</h3>
+        <p>Resumo da notícia...</p>
+        <a href="#" class="btn pequeno">Leia mais</a>
+      </div>
+    </div>
+    <div class="ver-mais-container noticias-btn">
+      <a href="noticias.html" class="btn-ver-mais noticias-ver-mais">Veja Mais</a>
     </div>
   </section>
 
   <!-- Agenda -->
   <section id="agenda" class="agenda">
     <h2>Agenda</h2>
-    <p>Aqui pode entrar um calendário interativo ou lista de eventos.</p>
+    <div id="calendar"></div>
   </section>
 
   <!-- Transparência -->
@@ -148,14 +182,14 @@
 
   <!-- Contato -->
   <section id="contato" class="contato">
-  <h2>Contato</h2>
-  <form action="https://formspree.io/f/xeolpbew" method="POST">
-    <input type="text" name="nome" placeholder="Seu nome" required>
-    <input type="email" name="email" placeholder="Seu e-mail" required>
-    <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
-    <button type="submit" class="btn verde">Enviar</button>
-  </form>
-</section>
+    <h2>Contato</h2>
+    <form action="https://formspree.io/f/xeolpbew" method="POST">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu e-mail" required>
+      <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+      <button type="submit" class="btn verde">Enviar</button>
+    </form>
+  </section>
 
   <!-- Footer -->
   <footer>
@@ -163,6 +197,26 @@
     <p>Desenvolvido com transparência para a comunidade.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Inicialização do FullCalendar -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        locale: 'pt-br', // idioma português Brasil
+        initialView: 'dayGridMonth',
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        events: [
+          { title: 'Reunião com a comunidade', start: '2025-09-10' },
+          { title: 'Visita ao bairro', start: '2025-09-15' },
+          { title: 'Audiência pública', start: '2025-09-20' }
+        ]
+      });
+      calendar.render();
+    });
+  </script>
 </body>
 </html>
